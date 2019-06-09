@@ -2,6 +2,6 @@ import axios from 'axios';
 
 const token = sessionStorage.getItem('token');
 export default axios.create({
-    baseURL: 'https://bez-posrednik-api.herokuapp.com/',
+    baseURL: 'http://localhost:5000/',
     headers: { 'Authorization': `Bearer ${token}`}
 });
