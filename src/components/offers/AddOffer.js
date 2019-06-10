@@ -23,7 +23,7 @@ class AddOffer extends Component {
     componentDidMount () {
         this.props.getCities();
         this.props.getOfferTypes();
-        this.props.getEstateTypes()
+        this.props.getEstateTypes();
     }
 
     handleChangeCity = (e) => {

@@ -13,6 +13,7 @@ const Header = () => {
                     <Link className="navbar-brand" to="/users/register">Регистрация</Link>
                     <Link className="navbar-brand" to="/offer/add-offer-props">Добави Опции</Link>
                     <Link className="navbar-brand" to="/offer/add-offer"> Добави оферта </Link>
+                    <Link className="navbar-brand" to="/offer/find-offer"> Търси </Link>
                 </div>
             </div>  
         </nav>

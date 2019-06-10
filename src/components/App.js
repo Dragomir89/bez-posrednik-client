@@ -10,6 +10,7 @@ import AddOfferProps from './offers/AddOfferProps';
 import { connect } from 'react-redux';
 import { getUser } from '../actions/index';
 import AddOffer from './offers/AddOffer';
+import FindEstate from './offers/FindEstate';
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route path="/users/register" exact component={Register}/>
                 <Route path="/offer/add-offer-props" exact component={AddOfferProps}/>
                 <Route path="/offer/add-offer" component={AddOffer}/>
+                <Route path="/offer/find-offer" component={FindEstate}/>
               </Router>
             </div>
        );

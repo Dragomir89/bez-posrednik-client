@@ -101,3 +101,14 @@ export const addPicture = (data) => async (dispatch) => {
     console.log(responce.data);
 }
 
+export const getEstatetes = (data) => async (dispatch) => {
+    let filters = {};
+    for (let prop in data) {
+        console.log(data[prop])
+        if(data[prop] && data[prop] != -1) {
+            filters[prop] = data[prop];
+        }
+    }
+    const responce = await streams.post('/get-estates', filters);
+    console.log(responce.data);
+}
