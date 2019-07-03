@@ -8,10 +8,11 @@ import {
     getFiltersForEstate,
     getEstateFilters,
     clearFilters,
-    getEstatetes
+    getEstates
 } from '../../actions';
 import Select from '../common/Select';
 import Input from '../common/Input';
+import EstateList from './EstateList'
 
 class FindEstate extends Component {
     constructor(props) {
@@ -119,9 +120,7 @@ class FindEstate extends Component {
 
     handleSearchClick = (e) => {
         e.preventDefault();
-
-        console.log(this.state);
-        this.props.getEstatetes(this.state);
+        this.props.getEstates(this.state);
     }
 
     render () {
@@ -175,7 +174,7 @@ class FindEstate extends Component {
                                     type='number'
                                     val={this.state['priceTo']}
                                     changeFn={this.handleChange} />
-
+                            
                             </div>
                             <div className='find-filter-header'>
                                 <Input
@@ -197,7 +196,6 @@ class FindEstate extends Component {
                             {this.createAdditionalInputs(this.state['estateType'])}
                         </div>
 
-
                     </div>
                     <div className='margin-1'>
 
@@ -215,14 +213,20 @@ class FindEstate extends Component {
                         </button>
                     </div>
                 </div>
+                {/* <i class="fa fa-location-arrow"></i>
+            <i className="fa fa-allergies"></i>
+            <i className="fa fa-angle-double-left"></i> */}
+            
+            {/* <i className="fa fa-trash"></i> */}
+                <EstateList estates={this.props.estates}></EstateList>
             </div>
-        )
+        )e
     }
 }
 
 function mapStateToProps (state) {
-    const { cities, neighborhoodsForCity, estateTypes, offerTypes, filters } = state;
-    return { cities, neighborhoodsForCity, estateTypes, offerTypes, filters }
+    const { cities, neighborhoodsForCity, estateTypes, offerTypes, filters, estates } = state;
+    return { cities, neighborhoodsForCity, estateTypes, offerTypes, filters, estates }
 }
 
 const actions = {
@@ -233,7 +237,7 @@ const actions = {
     getFiltersForEstate,
     getEstateFilters,
     clearFilters,
-    getEstatetes
+    getEstates
 };
 
 export default connect(mapStateToProps, actions)(FindEstate);

@@ -54,10 +54,10 @@ class AddOffer extends Component {
     }
 
     createAdditionalFilters = () => {
-        return this.props.filters.map((filter) => {
+        return this.props.filters.map((filter,i) => {
             return (
                 <Select
-                    key={filter._id}
+                    key={i}
                     values={filter.filterValues}
                     name={filter.estateProp}
                     label={filter.name}

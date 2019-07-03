@@ -5,6 +5,7 @@ import neighborhoodsForCityReducer from './neighborhoodsForCityReducer'
 import offerFiltersReducer from './offerFiltersReducer'
 import estateTypesReducer from './estateTypesReducer'
 import offerTypesReducer from './offerTypesReducer.js'
+import estatesReducer from './estatesReducer.js'
 
 export default combineReducers({
     user: userReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     neighborhoodsForCity: neighborhoodsForCityReducer,
     filters: offerFiltersReducer,
     estateTypes: estateTypesReducer,
-    offerTypes: offerTypesReducer
+    offerTypes: offerTypesReducer,
+    estates: estatesReducer
 });

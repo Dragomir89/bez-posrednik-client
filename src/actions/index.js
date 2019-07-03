@@ -10,7 +10,8 @@ import {
     GET_ESTATE_FILTERS,
     GET_ESTATE_TYPES,
     GET_OFFER_TYPES,
-    CLEAR_FILTERS
+    CLEAR_FILTERS,
+    GET_ESTATES
 } from './types';
 
 
@@ -101,14 +102,14 @@ export const addPicture = (data) => async (dispatch) => {
     console.log(responce.data);
 }
 
-export const getEstatetes = (data) => async (dispatch) => {
+export const getEstates = (data) => async (dispatch) => {
     let filters = {};
     for (let prop in data) {
-        console.log(data[prop])
-        if(data[prop] && data[prop] != -1) {
+        if(data[prop] && data[prop] !== -1) {
             filters[prop] = data[prop];
         }
     }
     const responce = await streams.post('/get-estates', filters);
-    console.log(responce.data);
+    const action = {type: GET_ESTATES, payload: responce.data}
+    dispatch(action);
 }

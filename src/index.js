@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
+// import '../node_modules/font-awesome/font-awesome.css';
 
+import '../node_modules/font-awesome/css/font-awesome.css'
 
 import App from './components/App';
 import reducers from './reducers';
@@ -14,7 +16,7 @@ const store = createStore(reducers, composeEnhancers((applyMiddleware(reduxThunk
 
 ReactDOM.render(
     <Provider store={store}>
-    <App/>
-</Provider>, 
-document.querySelector('#root'));
+        <App />
+    </Provider>,
+    document.querySelector('#root'));
 

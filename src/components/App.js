@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Router, Route } from 'react-router-dom';
+import { getUser } from '../actions/index';
+import { connect } from 'react-redux';
 import history from '../history';
 import Login from '../components/users/Login';
 import Register from './users/Register';
 import Header from './Header'
 import Home from './home/Home';
 import AddOfferProps from './offers/AddOfferProps';
-
-import { connect } from 'react-redux';
-import { getUser } from '../actions/index';
 import AddOffer from './offers/AddOffer';
 import FindEstate from './offers/FindEstate';
+import EstateDetails from './offers/EstateDetails';
 
 
 class App extends Component {
@@ -32,6 +32,7 @@ class App extends Component {
                 <Route path="/offer/add-offer-props" exact component={AddOfferProps}/>
                 <Route path="/offer/add-offer" component={AddOffer}/>
                 <Route path="/offer/find-offer" component={FindEstate}/>
+                <Route path="/offer/details/:id" exact component={EstateDetails}/>
               </Router>
             </div>
        );
