@@ -6,16 +6,12 @@ import { getUser } from '../../actions/index';
 
 class Home extends React.Component {
 
-    // componentDidMount() {
-    //     if(this.props.user.token && !this.props.user.email) { this.props.getUser() } 
-    // }
-
 
     render() {
         if(this.props.user.token && this.props.user.email) {
             return (
             <div>
-               <h1> Hi { this.props.user.firstName }</h1>
+               <h1> Hi { this.props.user.firstName } !</h1>
             </div>)
         } 
 
